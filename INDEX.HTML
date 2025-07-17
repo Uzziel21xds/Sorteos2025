@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorteos 2025 - Gana un Samsung S21</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("V8c_9g0D1xTu8spND"); // Reemplaza con tu Public Key de EmailJS
+    })();
+  </script>
+  <style>
+    .boletos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      gap: 5px;
+    }
+    .boleto {
+      padding: 5px;
+      text-align: center;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .disponible { background-color: #22c55e; }
+    .apartado { background-color: #f97316; }
+    .ocupado { background-color: #ef4444; }
+    .seleccionado { background-color: #3b82f6; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <nav class="bg-white shadow mb-6 sticky top-0 z-50">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-green-600">Sorteos 2025</h1>
+      <ul class="flex space-x-4 text-sm">
+        <li><a href="#inicio" class="hover:text-green-600">Inicio</a></li>
+        <li><a href="#faq" class="hover:text-green-600">Preguntas frecuentes</a></li>
+        <li><a href="#contacto" class="hover:text-green-600">Contacto</a></li>
+        <li><a href="#metodos" class="hover:text-green-600">Métodos de pago</a></li>
+        <li><a href="#comprar" class="hover:text-green-600">Comprar boletos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="inicio" class="max-w-4xl mx-auto p-4">
+    <h2 class="text-2xl font-bold text-center mb-4">Bienvenido a Sorteos 2025</h2>
+    <p class="text-center mb-4">¡Participa en rifas seguras y gana premios increíbles como el Samsung S21!</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <img src="https://i.blogs.es/91cf2a/samsung-s21-ultra-1/450_1000.jpg" alt="Samsung S21" class="rounded-xl shadow-md w-full" />
+        <p class="text-sm mt-2 text-center">Premio actual: Samsung S21</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold mb-2">Modalidad de juego</h3>
+        <ul class="list-disc ml-5 text-sm">
+          <li>Precio por boleto: $10 MXN</li>
+          <li>Rifa cuando se vendan al menos el 50%</li>
+          <li>Ganador por sorteo de la Lotería Nacional</li>
+        </ul>
+        <h3 class="font-bold mt-4 mb-2">Ganadores anteriores</h3>
+        <ul class="list-disc ml-5 text-sm">
+          <li>Juan López - Bocina JBL (mayo 2025)</li>
+          <li>Lucía Ramírez - Audífonos Sony (abril 2025)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="comprar" class="max-w-4xl mx-auto p-4">
+    <h2 class="text-xl font-semibold mb-2">Comprar boletos</h2>
+    <div id="boletos" class="boletos-container mb-4"></div>
+
+    <form id="formulario" class="bg-white p-4 rounded shadow-md mb-6">
+      <h2 class="text-lg font-bold mb-2">Selecciona tus boletos y llena tus datos</h2>
+      <input name="nombre" placeholder="Nombre" required class="w-full p-2 mb-2 border rounded" />
+      <input name="email" placeholder="Correo electrónico" required class="w-full p-2 mb-2 border rounded" />
+      <input name="whatsapp" placeholder="WhatsApp" required class="w-full p-2 mb-2 border rounded" />
+      <input type="hidden" name="boletos" id="boletosSeleccionados" />
+      <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+        Enviar y Apartar
+      </button>
+    </form>
+  </section>
+
+  <section id="faq" class="bg-white max-w-4xl mx-auto p-4 rounded shadow mb-6">
+    <h2 class="font-bold mb-2">Preguntas Frecuentes</h2>
+    <ul class="list-disc ml-6 text-sm text-gray-700">
+      <li>¿Cómo funciona? Selecciona tus boletos, llena tus datos y paga por SPEI.</li>
+      <li>¿Cómo pago? Transferencia SPEI a CLABE: <strong>021028065357464450</strong> (HSBC - UZZIEL VAZQUEZ).</li>
+      <li>¿Y después? Envía la captura al <strong><a href="https://wa.me/526871214465" class="text-blue-500 underline">6871214465 por WhatsApp</a></strong>.</li>
+      <li>¿Cuándo es el sorteo? Cuando se vendan al menos el 50% de los boletos y pase 1 mes.</li>
+      <li>¿Quién define al ganador? La Lotería Nacional, transparencia garantizada.</li>
+    </ul>
+  </section>
+
+  <section id="metodos" class="bg-white max-w-4xl mx-auto p-4 rounded shadow mb-6">
+    <h2 class="font-bold mb-2">Métodos de pago</h2>
+    <p>SPEI / Transferencia:</p>
+    <ul class="list-disc ml-6 text-sm">
+      <li>Banco: HSBC</li>
+      <li>CLABE: 021028065357464450</li>
+      <li>Titular: UZZIEL VAZQUEZ</li>
+    </ul>
+  </section>
+
+  <section id="contacto" class="bg-white max-w-4xl mx-auto p-4 rounded shadow mb-6">
+    <h2 class="font-bold mb-2">Contáctanos</h2>
+    <p>📞 WhatsApp: <a href="https://wa.me/526871214465" class="text-blue-600">6871214465</a></p>
+    <p>📧 Correo: <a href="mailto:uzzielabel221@gmail.com" class="text-blue-600">uzzielabel221@gmail.com</a></p>
+  </section>
+
+  <footer class="text-center text-xs text-gray-600 mt-6 mb-4">
+    &copy; 2025 Sorteos 2025 - Todos los derechos reservados
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/526871214465" class="fixed bottom-5 right-5 bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600" target="_blank">
+    💬
+  </a>
+
+  <script>
+    const boletosDiv = document.getElementById('boletos');
+    const boletosSeleccionados = [];
+
+    for (let i = 1; i <= 1000; i++) {
+      const div = document.createElement('div');
+      div.className = 'boleto disponible';
+      div.innerText = i;
+      div.dataset.num = i;
+
+      div.onclick = () => {
+        const num = div.dataset.num;
+        if (div.classList.contains('disponible')) {
+          if (!boletosSeleccionados.includes(num)) {
+            boletosSeleccionados.push(num);
+            div.classList.remove('disponible');
+            div.classList.add('seleccionado');
+          }
+        } else if (div.classList.contains('seleccionado')) {
+          boletosSeleccionados.splice(boletosSeleccionados.indexOf(num), 1);
+          div.classList.remove('seleccionado');
+          div.classList.add('disponible');
+        }
+        document.getElementById('boletosSeleccionados').value = boletosSeleccionados.join(', ');
+      };
+
+      boletosDiv.appendChild(div);
+    }
+
+    document.getElementById('formulario').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (boletosSeleccionados.length === 0) {
+        alert("Selecciona al menos un boleto");
+        return;
+      }
+
+      emailjs.sendForm('service_al8k6gh', 'template_wpn9hmb', this)
+        .then(() => {
+          alert("Información enviada correctamente");
+          boletosSeleccionados.forEach(num => {
+            const div = document.querySelector(`[data-num='${num}']`);
+            if (div) {
+              div.classList.remove('seleccionado');
+              div.classList.add('apartado');
+            }
+          });
+          boletosSeleccionados.length = 0;
+          this.reset();
+        }, (error) => {
+          console.error("Error", error);
+          alert("Error al enviar: " + error.text);
+        });
+    });
+  </script>
+</body>
+</html>
